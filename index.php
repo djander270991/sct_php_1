@@ -1,14 +1,21 @@
+<?php
+$page_name = 'index.php';
+$path_index = 'index.php';
+$path_1page = 'pages/1.php';
+$path_2page = 'pages/2.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    <title><?= $page_name ?></title>
 </head>
 <body>
-<h1><? echo'Добро пожаловать!'?></h1>
-<a href="<? echo 'index.php' ?>"> <? echo'Index'?></a><br>
-<a href="<? echo 'php/1.php'?>"> <?echo'Страница 1'?></a><br>
-<a href= "<? echo 'php/2.php'?>"> <?echo'Страница 2'?></a><br>
-<img src="<? echo '../img/388.png'?>" alt="IT school">
+<ul><a href="<?= $path_index ?>">Index</a> </ul>
+<ul><a href="<?= $path_1page ?>" >1 страница</a></ul>
+<ul><a href="<?= $path_2page ?>">2 страница</a></ul>
+
+<h2><?= $page_name ?></h2>
+
 
 </body>
 </html>
