@@ -11,57 +11,19 @@
 <body>
 
 <?php
-$x = '';
-$c = isset($x);
-var_dump($c);//bool(true)
-$x = null;
-$c = isset($x);
-var_dump($c);//bool(false)
-$x;
-$c = isset($x);
-var_dump($c);//bool(false)
-$x = [];
-$c = isset($x);
-var_dump($c);//bool(true)
-$x = ['a','b'];
-$c = isset($x);
-var_dump($c);//bool(true)
-$x = false;
-$c = isset($x);
-var_dump($c);//bool(true)
-$x = true;
-$c = isset($x);
-var_dump($c);//bool(true)
-$x = 1;
-$c = isset($x);
-var_dump($c);//bool(true)
-$x = 42;
-$c = isset($x);
-var_dump($c);//bool(true)
-$x = 0;
-$c = isset($x);
-var_dump($c);//bool(true)
-$x = -1;
-$c = isset($x);
-var_dump($c);//bool(true)
-$x = "1";
-$c = isset($x);
-var_dump($c);//bool(true)
-$x = "0";
-$c = isset($x);
-var_dump($c);//bool(true)
-$x = "-1";
-$c = isset($x);
-var_dump($c);//bool(true)
-$x = "php";
-$c = isset($x);
-var_dump($c);//bool(true)
-$x = "true";
-$c = isset($x);
-var_dump($c);//bool(true)
-$x = "false";
-$c = isset($x);
-var_dump($c);//bool(true)
+$x1 = rand(-100,100);
+if ($x1>= -100 && $x1 <=100) {
+echo "переменная x1 = $x1 <br>";
+};
+$x2 = rand(-100,100);
+if ($x2 >=-100 && $x2 <=100) {
+echo "переменная x2 = $x2 <br>";
+};
+$x3 = rand(-100,100);
+if (($x3 >= -100 && $x3 <=100)) {
+echo "переменная x3 = $x3 <br>";
+};
+
 ?>
 </body>
 
