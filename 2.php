@@ -11,38 +11,27 @@
 <body>
 
 <?php
-$x1 = rand(-100,100);
-echo "переменная x1 = $x1 <br>";
-$x2 = rand(-100,100);
-echo "переменная x2 = $x2 <br>";
-;
-$x3 = rand(-100,100);
-echo "переменная x3 = $x3 <br>";
+function  getResult($a,$b,$action){
+    switch($action){
+        case 'sum':
+        echo $a + $b;
+            break;
+        case 'difference':
+        echo $a - $b;
+            break;
+        case 'multiplication':
+         echo  $a * $b;
+            break;
+        case 'division':
+         echo $a / $b;
+            break;
+default:
+echo 'sum,difference,multiplication,division';
+break;
+    }
 
-if( $x1<=$x2 && $x2<=$x3){
-    echo "$x1 $x2 $x3";
 }
-elseif( $x1<=$x3 && $x3<=$x2){
-    echo "$x1 $x3 $x2";
-}
-elseif( $x2<=$x1 && $x1<=$x3){
-    echo "$x2 $x1 $x3";
-}
-elseif( $x2<=$x3 && $x3<=$x1){
-    echo "$x2 $x3 $x1";
-}
-elseif( $x3<=$x2 && $x2<=$x1){
-    echo "$x3 $x2 $x1";
-}
-elseif( $x3<=$x1 && $x1<=$x2){
-    echo "$x3 $x1 $x2";
-}
-elseif($x1 = $x2 && $x2 = $x3){
-    echo " переменные равны";
-}
-else {
-    echo 'все числа равны';
-}
+getResult(1,3,'difference');
 ?>
 </body>
 
