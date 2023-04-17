@@ -11,28 +11,38 @@
 <body>
 
 <?php
-function  getResult($a,$b,$action){
-    switch($action){
-        case 'sum':
-        echo $a + $b;
-            break;
-        case 'difference':
-        echo $a - $b;
-            break;
-        case 'multiplication':
-         echo  $a * $b;
-            break;
-        case 'division':
-         echo $a / $b;
-            break;
-default:
-echo 'sum,difference,multiplication,division';
-break;
-    }
+// Функция вычесляет наименьшее значение,третий параметр не обязателен,
+// выставленно максимально значение что бы он не влиял если введено только два.
+// Так как если ставить пустую строку или false они равны 0.
+// А так же переменные приводятся к числовому типу.
+//Не работает приведение типа function minimumNumber($x1, $x2, $x3=9223372036854775807): int,почему??
+
+
+function minimumNumber($x1, $x2, $x3=9223372036854775807){
+if( $x1<=$x2 && $x1<=$x3){
+    echo (int)$x1;
+}
+elseif( $x2<=$x1 && $x2<=$x3){
+    echo (int)$x2;
+}
+
+elseif( $x3<=$x2 && $x3<=$x1){
+    echo (int)$x3;
+}
 
 }
-getResult(1,3,'difference');
+// elseif($x1 = $x2 && $x2 = $x3){
+//     echo " переменные равны";
+// }
+// else {
+//     echo 'все числа равны';
+// }
+
+minimumNumber(100,13);
+
+
 ?>
+
 </body>
 
 </html>

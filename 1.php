@@ -5,19 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 10</title>
+    <title>Lesson 12</title>
 </head>
 
 <body>
-<h1>Lesson 10</h1>
+<h1>Lesson 12</h1>
 <?php
-function humanInfo($name,$age,$address){
+//humanInfo -выдает информацию о имени($name),возрасте($age) ,адресе ($adress) человека.$stringYears - описание возраста.
+//Возраст и адресс являються необязательным параметром.Выводяться только в случае заполнения.
+function humanInfo($name, $age = false, $address = false){
   $stringYears = '';
-  // if ($age % 10 == 1){
-  //   $stringYears = 'год';
-  //   elseif ($age % 10 == ) {
-  //     # code...
-  //   }
+
   switch ($age) {
     case 0:
       $stringYears = 'лет';
@@ -38,10 +36,17 @@ function humanInfo($name,$age,$address){
      
       break;
   }
+  $name = "Имя: $name <br>";
+  if($age){
+  $age = "Возраст: $age $stringYears <br>";
+  }
+  if($address){
+$address = "Адрес:$address <br>";
+  }
   
-  echo "Вас зовут: $name <br> Ваш возраст:$age $stringYears<br> Ваш адрес: $address <br>";
+  echo " $name  $age   $address ";
 }
-humanInfo('Yaroslav',rand(1,120),'Artelnay 11a')
+humanInfo('Yaroslav','32','Astrakhan');
 ?>
 </body>
 
