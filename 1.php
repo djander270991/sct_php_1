@@ -13,6 +13,10 @@
 <?php
 //humanInfo -выдает информацию о имени($name),возрасте($age) ,адресе ($adress) человека.$stringYears - описание возраста.
 //Возраст и адресс являються необязательным параметром.Выводяться только в случае заполнения.
+//@param string $name имя
+//@param bool $age возраст
+//@param bool $address адрес
+//@0return string
 function humanInfo($name, $age = false, $address = false){
   $stringYears = '';
 
