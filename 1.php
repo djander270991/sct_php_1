@@ -17,40 +17,27 @@
 //@param bool $age возраст
 //@param bool $address адрес
 //@0return string
-function humanInfo($name, $age = false, $address = false){
-  $stringYears = '';
+$useCount=0;
 
-  switch ($age) {
-    case 0:
-      $stringYears = 'лет';
-      case $age>4 && $age<21:
-        $stringYears = 'лет';
-        break;
-        case $age>104 && $age<121:
-          $stringYears = 'лет';
-          break;
-      case $age % 10 == 1:
-          $stringYears = ' год';
-          break;
-       case $age % 10 <5 && $age %10 >1:
-        $stringYears = 'года';
-        break;
-    default:
-    $stringYears = 'лет';
-     
-      break;
-  }
-  $name = "Имя: $name <br>";
-  if($age){
-  $age = "Возраст: $age $stringYears <br>";
-  }
-  if($address){
-$address = "Адрес:$address <br>";
-  }
-  
-  echo " $name  $age   $address ";
+/**
+ * Summary of useFunction
+ * @return int
+ */
+function useFunction(){
+  global $useCount;
+  $useCount++;
+  return $useCount;
+
 }
-humanInfo('Yaroslav','32','Astrakhan');
+var_dump(useFunction());
+echo '<br>';
+var_dump(useFunction());
+echo '<br>';
+var_dump(useFunction());
+echo '<br>';
+var_dump(useFunction());
+echo '<br>';
+var_dump(useFunction());
 ?>
 </body>
 
