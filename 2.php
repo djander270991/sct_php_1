@@ -11,26 +11,44 @@
 <body>
 
 <?php
-
 /**
- * Summary of useFunction
- * @return int
+ * Summary of lastSimbol
+ * @param mixed $text
+ * @return void
  */
-function useFunction(){
-  static $useCount = 0;
-  $useCount++;
-  return $useCount;
+function lastSimbol($text){
+  $lastchar = $text[-1];
+  
+}
+/**
+ * Summary of textLower
+ * @param mixed $text
+ * @return string
+ */
+function textLower($text){
+  $text = mb_strtolower($text);
+  $text = ucfirst($text);
+  for($i = 0;$i < mb_strlen($text);$i++){
+    if($text[$i] == ' '){
+     $text[$i] = '_';
+    }
+  }
+  switch ($text[-1]) {
+    case '!':
+      break;
+    case '?':
+    break;
+    case '.':
+      break;
+    default:
+      $text.= '.';
+      break;
+  }
+  return $text;
 
 }
-var_dump(useFunction());
-echo '<br>';
-var_dump(useFunction());
-echo '<br>';
-var_dump(useFunction());
-echo '<br>';
-var_dump(useFunction());
-
-
+$someText = "lorem dsfsdDdsf SSSfd asf asf asf a fds f ds f sdfsd f.";
+echo textLower($someText);
 ?>
 
 </body>
