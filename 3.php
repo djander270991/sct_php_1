@@ -18,21 +18,25 @@ function getContent(){
     
     </html>";
 }
+
 /**
  * Summary of str_replaceTitle
+ * @param mixed $title
  * @param mixed $newTitle
  * @return mixed
  */
-function str_replaceTitle($newTitle){
+function str_replaceTitle($title,$newTitle){
     $title = $newTitle;
     return $title;
 }
+
 /**
  * Summary of str_replaceContent
+ * @param mixed $content
  * @param mixed $newContent
  * @return mixed
  */
-function str_replaceContent($newContent){
+function str_replaceContent($content,$newContent){
    $content = $newContent;
     return $content;
 }
