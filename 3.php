@@ -1,44 +1,47 @@
 <?php
+global $title,$content;
+/**
+ * Summary of getContent
+ * @return string
+ */
 function getContent(){
-    $title = '';
-    $content = '';
+
     return "<html>
 
     <head>
     
-        <title>$title </title>
+        <title>{{TITLE}}</title>
     
     </head>
     
     <body>
     
-     $content
+    {{CONTENT}}
     
     </body>
     
     </html>";
 }
 
+
+
 /**
  * Summary of str_replaceTitle
- * @param mixed $title
- * @param mixed $newTitle
- * @return mixed
+ * @param mixed $new_text
+ * @return string
  */
-function str_replaceTitle($title,$newTitle){
-    $title = $newTitle;
-    return $title;
-}
+function str_replaceTitle($new_text){
+    return str_replace("{{TITLE}}",$new_text,getContent());
+   }
+
 
 /**
  * Summary of str_replaceContent
- * @param mixed $content
- * @param mixed $newContent
- * @return mixed
+ * @param mixed $new_text
+ * @return string
  */
-function str_replaceContent($content,$newContent){
-   $content = $newContent;
-    return $content;
+function str_replaceContent($new_text){
+ return str_replace("{{CONTENT}}",$new_text,getContent());
 }
 /**
  * Summary of getReplace
@@ -49,7 +52,10 @@ function str_replaceContent($content,$newContent){
 function getReplace(string $operation,string $text){
     $operation = 'str_'.$operation;
     if(function_exists($operation)){
-        return $operation(getContent());
+        return $operation($text);
+    }
+    else{
+        return null;
     }
 }
-getReplace('replaceTitle','dsfdsfdsfjnsdfjsdnfsdfds');
+echo getReplace("replaceContent",'ффф');
