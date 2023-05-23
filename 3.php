@@ -1,61 +1,49 @@
-<?php
-global $title,$content;
-/**
- * Summary of getContent
- * @return string
- */
-function getContent(){
-
-    return "<html>
-
-    <head>
-    
-        <title>{{TITLE}}</title>
-    
-    </head>
-    
-    <body>
-    
-    {{CONTENT}}
-    
-    </body>
-    
-    </html>";
-}
-
-
-
-/**
- * Summary of str_replaceTitle
- * @param mixed $new_text
- * @return string
- */
-function str_replaceTitle($new_text){
-    return str_replace("{{TITLE}}",$new_text,getContent());
-   }
-
-
-/**
- * Summary of str_replaceContent
- * @param mixed $new_text
- * @return string
- */
-function str_replaceContent($new_text){
- return str_replace("{{CONTENT}}",$new_text,getContent());
-}
-/**
- * Summary of getReplace
- * @param mixed $operation
- * @param mixed $text
- * @return mixed
- */
-function getReplace(string $operation,string $text){
-    $operation = 'str_'.$operation;
-    if(function_exists($operation)){
-        return $operation($text);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    table{
+        border:2px solid grey;
+        border-collapse: collapse;
     }
-    else{
-        return null;
+    th{
+        border:2px solid grey;
+       
     }
-}
-echo getReplace("replaceContent",'ффф');
+    td{
+        border:2px solid grey;
+        
+
+    }
+    .yellow{
+        background-color: yellow;
+    }
+    .aqua{
+        background-color:aqua;
+    }
+    </style>
+    <title>Таблица</title>
+</head>
+<body>
+    <table>
+        <tr>
+        <th class="yellow">№ п\п</th>
+        <th class="yellow">Наименование</th>
+        <th class="aqua">Цена, руб.</th>
+</tr>
+        <tr>
+            <td class="yellow">1</td>
+            <td class="yellow">Карандаж цветной</td>
+            <td class="aqua">20,00</td>
+        </tr>
+        <tr>
+            <td class="yellow">2</td>
+            <td class="yellow">Линейка 20см</td>
+            <td class="aqua">30,00</td>
+        </tr>
+    </table>
+</body>
+</html>
