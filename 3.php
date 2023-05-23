@@ -1,5 +1,4 @@
 <?php
-global $title,$content;
 /**
  * Summary of getContent
  * @return string
@@ -7,7 +6,6 @@ global $title,$content;
 function getContent(){
 
     return "<html>
-
     <head>
     
         <title>{{TITLE}}</title>
@@ -22,40 +20,33 @@ function getContent(){
     
     </html>";
 }
-
-
-
-/**
- * Summary of str_replaceTitle
- * @param mixed $new_text
- * @return string
- */
-function str_replaceTitle($new_text){
-    return str_replace("{{TITLE}}",$new_text,getContent());
-   }
-
-
-/**
- * Summary of str_replaceContent
- * @param mixed $new_text
- * @return string
- */
-function str_replaceContent($new_text){
- return str_replace("{{CONTENT}}",$new_text,getContent());
-}
-/**
- * Summary of getReplace
- * @param mixed $operation
- * @param mixed $text
- * @return mixed
- */
-function getReplace(string $operation,string $text){
-    $operation = 'str_'.$operation;
-    if(function_exists($operation)){
-        return $operation($text);
+function str_replaceTitle($new_text,$text){
+    return str_replace("{{TITLE}}",$new_text,$text);
+    }
+    
+    /**
+    * Summary of str_replaceContent
+    * @param mixed $new_text
+    * @return string
+    */
+    function str_replaceContent($new_text,$text){
+    return str_replace("{{CONTENT}}",$new_text,$text);
+    }
+    /**
+    * Summary of getReplace
+    * @param mixed $operation
+    * @param mixed $text
+    * @return mixed
+    */
+    function getReplace(string $operation,string $text){
+    if($operation == 'title'){
+    return str_replaceTitle($text,getContent());
+    }
+    elseif ($operation == 'content'){
+    return str_replaceContent($text,getContent());
     }
     else{
-        return null;
+    return null;
     }
 }
-echo getReplace("replaceContent",'ффф');
+echo getReplace ('title','ффф');
