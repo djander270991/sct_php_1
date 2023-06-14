@@ -1,13 +1,11 @@
 <?php
-$shop = [ 'телефоны'=> ['samsung','ifone','honor'],
-'мебель' => ['кресло', 'стул','кровать'],
-'товары для автомобиля' => ['резина','ароматизаторы','запчасти']
-];
-foreach ( $shop as $key =>$value)
-{echo "$key :";
-    foreach ($value as $item){
-        echo "$item ";
-        
-    }
-    echo '<br>';
-}
+$json =  '{"phone":["89050506568", "89050506545", "335566"]}';
+// $json = '{"foneNumber":{89050506568, 89050506545, 335566}}';
+$jsonPhp = json_decode($json);
+echo '<pre>';
+print_r($jsonPhp);
+echo '</pre>';
+$phpJson = json_encode($jsonPhp);
+echo '<pre>';
+print_r($phpJson);
+echo '</pre>';

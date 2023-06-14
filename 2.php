@@ -1,13 +1,42 @@
 <?php
-$news = [
-  'ryzen' => ' <a href="https://overclockers.ru/blog/Zystax/show/94322/
-  cena-ryzen-5-5500-upala-nizhe-10-000-rublej-sobiraem-otlichnyj-igrovoj-kompjuter-dlya-novyh-igr">ryzen</a>',
-   'Гонки' => ' <a href="https://overclockers.ru/blog/wwr222/show/94271/itogi-gonochnogo-uik-enda-27-28-maya">гонки</a>',
-   'Ремонт видокарты' => '<a href="https://overclockers.ru/blog/Trinity/show/93382/
-   remont-videokarty-posle-nekachestvennogo-servisa-kak-izbezhat-problem">Ремонт видеокарты</a>'
-  ];
-  echo '<ul>';
-  foreach ( $news as $key => $value ){
-    echo "<li>$value</li>";
-     }
-  echo '</ul>';
+$price = [
+  [
+
+    'name' => 'Стул 1',
+
+    'price' => 20,
+
+    'category' => 1,
+
+],
+
+[
+
+    'name' => 'Стул 2',
+
+    'price' => 210,
+
+    'category' => 3,
+
+],
+
+[
+
+    'name' => 'Стул 3',
+
+    'price' => 15,
+
+    'category' => 2,
+
+],
+];
+function mySort($key){
+  return function ($a,$b) use ($key){
+ return $a[$key] <=> $b[$key];
+};
+}
+
+usort($price,mySort('price'));
+echo '<pre>';
+print_r($price);
+echo '</pre>';
